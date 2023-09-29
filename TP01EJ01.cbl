@@ -2,7 +2,7 @@
       * Equipo:     PIOVANO, PAOLA – AULA X
       *             CARDELLINO, MARIELA - AULA 2
       *             SUAREZ, MARIANO - AULA X
-      *             WEICMAN, DIEGO - AULA X
+      *             WAICMAN, DIEGO - AULA X
       *             GUZMAN, WINSTON - AULA 2
       * Date:       29/09/2023
       * Purpose:    TRABAJO PRACTICO DE COBOL 01 (SILVERTECH) 
