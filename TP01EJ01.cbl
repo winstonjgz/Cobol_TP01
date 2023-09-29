@@ -1,5 +1,5 @@
       ******************************************************************
-      * Autores:    PIOVANO, PAOLA – AULA X
+      * Equipo:     PIOVANO, PAOLA – AULA X
       *             CARDELLINO, MARIELA - AULA 2
       *             SUAREZ, MARIANO - AULA X
       *             WEICMAN, DIEGO - AULA X
@@ -19,14 +19,29 @@
        FILE-CONTROL.
       *----------------------------------------------------------------*
            SELECT ENTRADA
-           ASSIGN TO '../PARCIAL2023.TXT'
+           ASSIGN TO '../ALUMNOS.TXT'
            ORGANIZATION IS LINE SEQUENTIAL
            FILE STATUS IS FS-ENTRADA.
 
-           SELECT SALIDA
-           ASSIGN TO '../RPPARCIAL2023.TXT'
+           SELECT SAL-PROMEDIO
+           ASSIGN TO '../PROMEDIO.TXT'
            ORGANIZATION IS LINE SEQUENTIAL
-           FILE STATUS IS FS-SALIDA.
+           FILE STATUS IS FS-SAL-PROMEDIO.
+
+           SELECT SAL-DESCARTADOS
+           ASSIGN TO '../DESCARTADOS.TXT'
+           ORGANIZATION IS LINE SEQUENTIAL
+           FILE STATUS IS FS-SAL-DESCARTADOS.
+
+           SELECT SAL-HONOR
+           ASSIGN TO '../HONOR.TXT'
+           ORGANIZATION IS LINE SEQUENTIAL
+           FILE STATUS IS FS-SAL-HONOR.
+
+           SELECT SAL-ERROR
+           ASSIGN TO '../ERROR.TXT'
+           ORGANIZATION IS LINE SEQUENTIAL
+           FILE STATUS IS FS-SAL-ERROR.
 
       *----------------------------------------------------------------*
        DATA DIVISION.
