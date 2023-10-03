@@ -47,25 +47,23 @@
        DATA DIVISION.
 
        FILE SECTION.
-       FD ENT-ALUMNOS.
-           COPY "ALUMNOS.CPY".
+       
+           COPY ALUMNOS.
        
        FD SALIDA-DESCARTADOS.
-       01 WS-SAL-ARCH-APAREO                     PIC X(100).
+       01 WS-SAL-ARCH-APAREO                   PIC X(84).
 
        FD SALIDA-ERROR.
-       01 WS-SAL-ARCH-ERROR                     PIC X(100).
+       01 WS-SAL-ARCH-ERROR                    PIC X(84).
 
        FD SALIDA-HONOR.
-       01 WS-SAL-ARCH-HONOR                     PIC X(100).
+       01 WS-SAL-ARCH-HONOR                    PIC X(84).
 
        FD SALIDA-PROMEDIO.
-       01 WS-SAL-ARCH-PROMEDIO                     PIC X(100).
+       01 WS-SAL-ARCH-PROMEDIO                 PIC X(88).
 
 
-      * FD SALIDA.
-      * 01 SAL-REPORTE                   PIC X(100).
-
+      
        WORKING-STORAGE SECTION.
        
 
@@ -79,20 +77,20 @@
 
        01 FS-STATUS.
           05 FS-ENT-ALUMNOS                 PIC X(2).
-             88 FS-ENT-ALUMNOS-OK                     VALUE '00'.
-             88 FS-ENT-ALUMNOS-EOF                    VALUE '10'.
-             88 FS-ENT-ALUMNOS-NFD                    VALUE '35'.
+             88 FS-ENT-ALUMNOS-OK                         VALUE '00'.
+             88 FS-ENT-ALUMNOS-EOF                        VALUE '10'.
+             88 FS-ENT-ALUMNOS-NFD                        VALUE '35'.
 
-          05 FS-SALIDA-PROMEDIO             PIC X(02).
+          05 FS-SALIDA-PROMEDIO         PIC X(02).
              88 FS-SALIDA-PROMEDIO-OK                 VALUE '00'.
              88 FS-SALIDA-PROMEDIO-EOF                VALUE '10'.
              88 FS-SALIDA-PROMEDIO-NFD                VALUE '35'. 
 
 
-          05 FS-SALIDA-DESCARTADOS          PIC X(02).
-             88 FS-SALIDA-DESCARTADOS-OK             VALUE '00'.
-             88 FS-SALIDA-DESCARTADOS-EOF            VALUE '10'.
-             88 FS-SALIDA-DESCARTADOS-NFD            VALUE '35'.
+          05 FS-SALIDA-DESCARTADOS      PIC X(02).
+             88 FS-SALIDA-DESCARTADOS-OK VALUE      '00'.
+             88 FS-SALIDA-DESCARTADOS-EOF       VALUE '10'.
+             88 FS-SALIDA-DESCARTADOS-NFD             VALUE '35'.
 
           05 FS-SALIDA-ERROR   PIC X(02).
              88 FS-SALIDA-ERROR-OK                    VALUE '00'.
@@ -122,19 +120,22 @@
           05 WS-ESTUDIANTE-MAT-HONOR    PIC X(30)     VALUE " ".
           05 WS-ESTUDIANTE-PROM-HONOR   PIC 9(5)V9(2) VALUE 0.
           
-       01 WS-NOMBRE-MATERIA             PIC X(30) OCCURS 6 TIMES.
+       01 WS-NOMBRE-MATERIA             PIC X(30) OCCURS 20 TIMES.
           77 WS-INDICE                     PIC 9         VALUE 1.
        01 WS-PROMEDIO                   PIC 9(5)V9(2) VALUE 0.
 
       *----------------------------------------------------------------*
        PROCEDURE DIVISION.
-           MOVE 'Economía' TO WS-NOMBRE-MATERIA(1).
-           MOVE 'Física' TO WS-NOMBRE-MATERIA(2).
-           MOVE 'Informática' TO WS-NOMBRE-MATERIA(3).
-           MOVE 'Inglés' TO WS-NOMBRE-MATERIA(4).
-           MOVE 'Matemáticas' TO WS-NOMBRE-MATERIA(5).
-           MOVE 'Química' TO WS-NOMBRE-MATERIA(6).
+      *     MOVE 'Economía' TO WS-NOMBRE-MATERIA(1).
+      *     MOVE 'Física' TO WS-NOMBRE-MATERIA(2).
+      *     MOVE 'Informática' TO WS-NOMBRE-MATERIA(3).
+      *     MOVE 'Inglés' TO WS-NOMBRE-MATERIA(4).
+      *     MOVE 'Matemáticas' TO WS-NOMBRE-MATERIA(5).
+      *     MOVE 'Química' TO WS-NOMBRE-MATERIA(6).
            
+      *     IF NOMBRE IS ALPHA
+      *        THEN DISPLAY "El campo es alfabético"
+      *        ELSE DISPLAY "El campo no es alfabético".
 
            PERFORM 1000-INICIAR-PROGRAMA
               THRU 1000-INICIAR-PROGRAMA-FIN.
@@ -312,7 +313,7 @@
               THRU 2200-PROCESAR-CORTE-CATEG-FIN
               UNTIL FS-ENT-ALUMNOS-EOF 
       *       OR ENT-FECHA NOT EQUAL WS-CC-FECHA-ANT
-      *        OR ENT-CATEGORIA NOT EQUAL WS-CC-CATEGORIA-ANT.
+      *       OR ENT-CATEGORIA NOT EQUAL WS-CC-CATEGORIA-ANT.
            
 
            
