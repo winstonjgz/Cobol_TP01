@@ -1,23 +1,14 @@
-       01 WS-SALIDA-HONOR.
-
-          05 WS-SAL-HONOR-SEPARADOR          PIC X(133) VALUES ALL "-".
-
-          05 WS-SAL-HONOR-TITULOS.
+       FD SALIDA-HONOR.
+       
+       01 WS-SAL-HONOR-DETALLE.
+          05 WS-SAL-HONOR-MATERIA   PIC X(30).
+          05 FILLER                 PIC X(03) VALUE ' | '.
+          05 WS-SAL-HONOR-NOMBRE    PIC X(40).
+          05 FILLER                 PIC X(06) VALUE '    | '.
+          05 WS-SAL-HONOR-PROMEDIO  PIC 9(5)V9(3).
+          05 FILLER                 PIC X(03) VALUE ' | '.
              
-             10 FILLER                      PIC X(30) VALUE 'Materia'.
-             10 FILLER                      PIC X(03) VALUE ' | '.
-             10 FILLER                      PIC X(40)
-                                              VALUE 'Apellido y Nombre'.
-             10 FILLER                      PIC X(03) VALUE ' | '.
-             10 FILLER                      PIC X(10) VALUE 'Promedio'.
-             10 FILLER                      PIC X(03) VALUE ' | '.
-             
-
-          05 WS-SAL-HONOR-DETALLE.
-             10 WS-SAL-HONOR-MATERIA   PIC X(30).
-             10 FILLER                 PIC X(03) VALUE ' | '.
-             10 WS-SAL-HONOR-NOMBRE    PIC X(40).
-             10 FILLER                 PIC X(06) VALUE '    | '.
-             10 WS-SAL-HONOR-PROMEDIO  PIC 9(5)V9(3).
-             10 FILLER                 PIC X(03) VALUE ' | '.
-             
+       01 WS-ESTUDIANTE-HONOR.
+          05 WS-ESTUDIANTE-HONOR        PIC X(40)     VALUE " ".
+          05 WS-ESTUDIANTE-MAT-HONOR    PIC X(30)     VALUE " ".
+          05 WS-ESTUDIANTE-PROM-HONOR   PIC 9(5)V9(2) VALUE 0.
